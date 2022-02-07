@@ -20,7 +20,30 @@ class DersListe extends StatelessWidget {
                 },
                 child: Card(
                   child: ListTile(
-                    title: Text(SabitData.tumEklenenD[index].ad),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
+                      side: BorderSide(color: Colors.blue),
+                    ),
+                    title: Text(
+                      SabitData.tumEklenenD[index].ad,
+                      style: GoogleFonts.quicksand(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.blue),
+                    ),
+                    subtitle: Text(
+                      "Kredi: " +
+                          SabitData.tumEklenenD[index].krediDegeri.toString(),
+                      style: GoogleFonts.quicksand(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black),
+                    ),
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.blue,
+                      child: Text(
+                          SabitData.tumEklenenD[index].harfDegeri.toString()),
+                    ),
                   ),
                 ),
               );
@@ -30,7 +53,10 @@ class DersListe extends StatelessWidget {
             child: Center(
                 child: Text(
               "Lutfen ders ekleyiniz.",
-              style: GoogleFonts.roboto(),
+              style: GoogleFonts.quicksand(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.blue),
             )),
           );
   }

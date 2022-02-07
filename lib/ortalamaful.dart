@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ortalamahesapkodbir/dersListe.dart';
 import 'package:ortalamahesapkodbir/ders.dart';
 import 'package:ortalamahesapkodbir/ortalamakisim.dart';
@@ -24,10 +25,16 @@ class _OrtalamaHesaplaState extends State<OrtalamaHesapla> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text("Ortalama Hesapla"),
-        centerTitle: true,
-      ),
+          title: Text("Ortalama Hesapla",
+              style: GoogleFonts.quicksand(
+                  fontSize: 25, fontWeight: FontWeight.w700)),
+          centerTitle: true,
+          shadowColor: Colors.transparent,
+          elevation: 0,
+          foregroundColor: Colors.blue,
+          backgroundColor: Colors.transparent),
       body: Column(
+        
         children: [
           Column(
             children: [
@@ -96,7 +103,7 @@ class _OrtalamaHesaplaState extends State<OrtalamaHesapla> {
               initialValue: savedString,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: SabitData.temarenk.shade100,
+                fillColor: Color.fromARGB(148, 187, 222, 251),
                 hintText: 'Eklemek istediğin dersi yazın',
                 labelText: 'Ders *',
                 border: OutlineInputBorder(
@@ -107,22 +114,29 @@ class _OrtalamaHesaplaState extends State<OrtalamaHesapla> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                DropdownButton<double>(
-                  value: dropdownValue,
-                  onChanged: (double? newValue) {
-                    setState(() {
-                      dropdownValue = newValue!;
-                      print("deger $dropdownValue");
-                    });
-                  },
-                  items: tumHarfler.map<DropdownMenuItem<double>>((String ali) {
-                    return DropdownMenuItem<double>(
-                      value: atama(ali),
-                      child: Text(ali),
-                    );
-                  }).toList(),
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(15)),
+                  child: DropdownButton<double>(
+                    value: dropdownValue,
+                    onChanged: (double? newValue) {
+                      setState(() {
+                        dropdownValue = newValue!;
+                        print("deger $dropdownValue");
+                      });
+                    },
+                    items:
+                        tumHarfler.map<DropdownMenuItem<double>>((String ali) {
+                      return DropdownMenuItem<double>(
+                        value: atama(ali),
+                        child: Text(ali),
+                      );
+                    }).toList(),
+                  ),
                 ),
                 DropdownButton<int>(
+                  borderRadius: BorderRadius.circular(15),
                   value: kredivalue,
                   onChanged: (int? newValue) {
                     setState(() {

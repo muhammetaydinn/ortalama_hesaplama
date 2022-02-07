@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OrtalamaGosteren extends StatelessWidget {
   final double ortalama;
@@ -11,16 +12,25 @@ class OrtalamaGosteren extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      Text(
-        dersSayisi > 0 ? "$dersSayisi Ders Girildi" : "Ders Seciniz",
-        style: TextStyle(fontSize: 18),
-      ),
-      Text(
-        ortalama >= 0 ? "${ortalama.toStringAsFixed(2)}" : "0.00",
-        style: TextStyle(fontSize: 55),
-      ),
-      Text("Ortalama")
-    ]);
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            dersSayisi > 0 ? "$dersSayisi Ders Girildi" : "Ders Seciniz",
+            style: GoogleFonts.quicksand(
+                fontSize: 14, fontWeight: FontWeight.w700, color: Colors.blue),
+          ),
+          Text(
+            ortalama >= 0 ? "${ortalama.toStringAsFixed(2)}" : "0.00",
+            style: GoogleFonts.quicksand(
+                fontSize: 55, fontWeight: FontWeight.w500, color: Colors.blue),
+          ),
+          Text(
+            "Ortalama",
+            style: GoogleFonts.quicksand(
+                fontSize: 14, fontWeight: FontWeight.w500, color: Colors.blue),
+          )
+        ]);
   }
 }
