@@ -1,6 +1,8 @@
-# ortalamahesapkodbir
+# Harf Notu Ortalama Hesaplama App
 
-A new Flutter project.
+Harf notuna göre ortalama hesap uygulaması.
+
+![WhatsApp_Video_2022-07-30_at_21_37_46_AdobeExpress](https://user-images.githubusercontent.com/72871376/182004240-0dd4e51d-b17f-44c4-a411-388779cc1249.gif)
 
 ## Getting Started
 
